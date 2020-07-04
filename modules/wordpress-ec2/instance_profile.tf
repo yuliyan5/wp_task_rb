@@ -1,6 +1,6 @@
 resource "aws_iam_instance_profile" "wp_instance" {
   name = "wp_instance"
-  role = "${aws_iam_role.ec2-s3-role.name}"
+  role = aws_iam_role.ec2-s3-role.name
 }
 
 
