@@ -21,7 +21,7 @@ resource "aws_launch_configuration" "wp" {
 resource "aws_autoscaling_group" "application_asg" {
   name                 = "${var.env}-${var.application_name}-asg"
   launch_configuration = aws_launch_configuration.wp.name
-  availability_zones   = [var.az-a, var.az-b]
+  #availability_zones   = [var.az-a, var.az-b] https://github.com/terraform-providers/terraform-provider-aws/issues/9622
   vpc_zone_identifier  = var.vpc_private_subnets
   desired_capacity = var.desired_capacity
   min_size         = var.min_size

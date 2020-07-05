@@ -39,3 +39,14 @@ data "template_file" "db-playbook" {
     db_pass   = data.aws_ssm_parameter.ssm_db_secret.value
   }
 }
+
+### mysql optimize script
+
+resource "aws_s3_bucket_object" "mysql_optimize_script" {
+  bucket = aws_s3_bucket.rb-wp-ansible-bucket.id
+  key    = "mysql_optimize.sh"
+  #source = "${file(data.template_file.db-playbook.rendered)}"
+  source = "./configuration/mysql_optimize.sh"
+
+
+}

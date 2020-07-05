@@ -27,3 +27,15 @@ data "template_file" "ec2-playbook" {
     db_host   = var.db_host
   }
 }
+
+
+### Content
+
+resource "aws_s3_bucket_object" "index" {
+  bucket = data.aws_s3_bucket.config.id
+  key    = "index.html"
+  source = "./content/index.html"
+
+  depends_on = [local_file.ec2-playbook]
+
+}
