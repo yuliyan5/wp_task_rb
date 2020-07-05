@@ -1,5 +1,8 @@
 # wp_task_rb
 
+After spinnig up this example config it can be reached at
+https://ultimatelinuxblog.tk
+
 Spin up Worpress installation on two instances with one separate mysql DB server
 
 # Prerequsites for new user/account:
