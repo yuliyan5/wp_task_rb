@@ -13,9 +13,12 @@ variable "instance_type" {
 variable "key_name" {
   description = "ssh key for instances"
 }
-variable "config_bucket" {
+variable "config_bucket_name" {
   description = "config_bucket"
 }
+#variable "config_s3_bucket" {
+#  description = "output for config bucket id"
+#}
 
 #variable "security_groups_alb" {
 #  description = "security_groups_alb"

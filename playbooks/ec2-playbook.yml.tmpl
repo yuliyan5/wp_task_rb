@@ -13,10 +13,10 @@
       - name: wordpress
         dbname: wordpress
         dbuser: wordpress
-        dbpass: 'secretpass'
-        dbhost: localhost
+        dbpass: '${db_pass}'
+        dbhost: ${db_host}
         path: /var/www/html
-        url: http://localhost
+        url: http://${wp_url}
         title: wordpress
         admin_name: admin
         admin_email: root@localhost.localdomain

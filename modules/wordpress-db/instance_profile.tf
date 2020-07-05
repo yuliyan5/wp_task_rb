@@ -1,11 +1,11 @@
 resource "aws_iam_instance_profile" "db_instance" {
-  name = "wp_instance"
+  name = "db_instance"
   role = aws_iam_role.db-s3-role.name
 }
 
 
 resource "aws_iam_role" "db-s3-role" {
-  name = "wp_instance_role"
+  name = "db_instance_role"
   path = "/"
 
   assume_role_policy = <<EOF

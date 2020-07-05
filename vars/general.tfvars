@@ -7,7 +7,7 @@ region = "eu-central-1"
 
 #ASG
 desired_capacity = "2"
-min_size         = "1"
+min_size         = "2"
 max_size         = "2"
 #add az list
 
@@ -22,4 +22,4 @@ zone_id = "Z04677193KJMJR175911T"
 wp_url = "ultimatelinuxblog.tk"
 
 #S3
-config_bucket = "rb-wp-ansible-bucket"
+config_bucket_name = "rb-wp-ansible-bucket"

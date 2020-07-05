@@ -12,9 +12,7 @@ variable "key_name" {
   description = "ssh key for instances"
 }
 
-#variable "security_groups_alb" {
-#  description = "security_groups_alb"
-#}
+
 variable "vpc_private_subnets" {
   description = " "
 }
@@ -25,42 +23,24 @@ variable "bastion_sg" {
   description = " "
 }
 
-/*
-variable "subnets_alb" {
-  description = "subnets_alb"
-}
-*/
+
 variable "vpc_id" {
   description = "vpc_id"
 }
-variable "config_bucket" {
+variable "config_bucket_name" {
   description = "config_bucket"
 }
-variable "module_depends_on" {
+#variable "module_depends_on" {
+#  description = ""
+#}
+
+variable "db_pass" {
+  description = ""
+}
+variable "db_host" {
   description = ""
 }
 
-#variable "subnet1-private" {
-#  description = "subnet1-private"
-#}
-#
-#variable "subnet2-private" {
-#    description = "subnet2-private"
-#}
-#
-#variable "subnet1-public" {
-#  description = "subnet1-public"
-#}
-#
-#variable "subnet2-public" {
-#    description = "subnet2-public"
-#}
-
-/*
-variable "subnet3-private" {
-    description = "subnet3-private"
-}
-*/
 variable "az-a" {
   description = "AZ A"
   default = "eu-central-1a"
@@ -99,9 +79,16 @@ variable "health_check_path" {
 variable "certificate_arn" {
   description = "Certificate ARN"
 }
-#variable "wp_url" {
-#  description = "url for wp site"
-#}
+variable "wp_url" {
+  description = "url for wp site"
+}
+variable "zone_id" {
+  description = "route 53 zone id"
+}
+
+variable "config_s3_bucket" {
+  description = "output for config bucket id"
+}
 
 variable "enabled_metrics" {
   description = "A list of metrics to collect. The allowed values are GroupMinSize, GroupMaxSize, GroupDesiredCapacity, GroupInServiceInstances, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances"

@@ -5,10 +5,13 @@ resource "aws_instance" "db" {
   subnet_id = var.vpc_private_subnets[0]
   key_name = var.key_name
   user_data = file("configuration/db_userdata.sh")
+  iam_instance_profile = aws_iam_instance_profile.db_instance.name
 
+
+  tags = {
+    Name        = "wp-db"
+  }
 }
 
-data "aws_subnet_ids" "private_subnets" {
-  vpc_id = var.vpc_id
-}
+
 

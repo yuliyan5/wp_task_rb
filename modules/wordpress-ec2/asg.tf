@@ -55,7 +55,7 @@ resource "aws_autoscaling_group" "application_asg" {
 resource "aws_autoscaling_policy" "application_policy" {
   name                   = "application_policy"
   policy_type            = "TargetTrackingScaling"
-  adjustment_type        = "ChangeInCapacity"
+  #adjustment_type        = "ChangeInCapacity"
 //  cooldown               = 300
   estimated_instance_warmup = 150
   autoscaling_group_name = aws_autoscaling_group.application_asg.name
