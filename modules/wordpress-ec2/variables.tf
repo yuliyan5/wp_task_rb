@@ -33,6 +33,12 @@ variable "subnets_alb" {
 variable "vpc_id" {
   description = "vpc_id"
 }
+variable "config_bucket" {
+  description = "config_bucket"
+}
+variable "module_depends_on" {
+  description = ""
+}
 
 #variable "subnet1-private" {
 #  description = "subnet1-private"
@@ -93,6 +99,9 @@ variable "health_check_path" {
 variable "certificate_arn" {
   description = "Certificate ARN"
 }
+#variable "wp_url" {
+#  description = "url for wp site"
+#}
 
 variable "enabled_metrics" {
   description = "A list of metrics to collect. The allowed values are GroupMinSize, GroupMaxSize, GroupDesiredCapacity, GroupInServiceInstances, GroupPendingInstances, GroupStandbyInstances, GroupTerminatingInstances, GroupTotalInstances"

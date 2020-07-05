@@ -37,11 +37,31 @@ module "wordpress-ec2" {
   vpc_public_subnets = module.vpc.public_subnet_ids
   bastion_sg = module.vpc.bastion_security_group_id
   #zone_id = var.zone_id
+  config_bucket = var.config_bucket
+  module_depends_on = module.wordpress-db.db_private_dns
 
 }
 
 
+module "wordpress-db" {
+  source = "./modules/wordpress-db"
+  env = var.environment
+  #application_name = var.application_name
+  image_id = var.image_id
+  instance_type = var.image_id
+  key_name = var.key_name
+  
+  vpc_id = module.vpc.id
+  wp_instance_security_group_id = module.wordpress-ec2.wp_instance_security_group_id
+  #security_groups_alb = 
+  vpc_private_subnets = module.vpc.private_subnet_ids
+  #vpc_public_subnets = module.vpc.public_subnet_ids
+  bastion_sg = module.vpc.bastion_security_group_id
+  #zone_id = var.zone_id
+  #wp_url = var.wp_url
+  config_bucket = var.config_bucket
 
+}
 
 
 
@@ -58,6 +78,7 @@ variable "environment" {}
 
 #variable "vpc_id" {}
 variable "image_id" {}
+variable "config_bucket" {}
 
 #variable "security_groups_alb" {}
 #variable "vpc_private_subnets" {}
@@ -78,6 +99,7 @@ variable "zone_id" {}
 variable "certificate_arn" {}
 variable "health_check_path" {}
 
-variable "region" {
- description="backend region"
-}
+variable "region" {}
+variable "wp_url" {}
+#variable "wp_instance_security_group_id" {}
+

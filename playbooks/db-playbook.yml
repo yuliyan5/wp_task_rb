@@ -1,0 +1,18 @@
+- hosts: localhost
+  become: true
+  roles:
+  gather_facts: yes
+  roles:
+     - idealista.mysql_role
+  vars:
+     mysql_root_user: root         # Change mysql root user
+     mysql_root_password: secretpass    # Change mysql root password
+     mysql_databases:
+      - name: wordpress
+        encoding: utf8
+     mysql_users:
+      - name: wordpress
+        host: '%'
+        password: secretpass
+        #priv: [ '*.*:DELETE,INSERT,SELECT,UPDATE,LOCK TABLES' ]
+        priv: [ '*.*:ALL PRIVILEGES' ]

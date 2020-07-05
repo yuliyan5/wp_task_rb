@@ -17,3 +17,9 @@ health_check_path = "/"
 
 #Route53
 zone_id = "Z04677193KJMJR175911T"
+
+#WP
+wp_url = "ultimatelinuxblog.tk"
+
+#S3
+config_bucket = "rb-wp-ansible-bucket"

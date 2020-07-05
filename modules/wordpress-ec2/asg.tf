@@ -1,8 +1,9 @@
 resource "aws_launch_configuration" "wp" {
-  name   = "${var.env}.${var.application_name}"
-  iam_instance_profile = aws_iam_role.ec2-s3-role.name
+  name_prefix   = "${var.env}.${var.application_name}-"
+  iam_instance_profile = aws_iam_instance_profile.wp_instance.name
   image_id      = var.image_id
   instance_type = var.instance_type
+  user_data = file("configuration/ec2_userdata.sh")
   key_name = "yuli"
   security_groups = [aws_security_group.sg_main.id]
 
