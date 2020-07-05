@@ -1,0 +1,34 @@
+- hosts: localhost
+  become: true
+  roles:
+  gather_facts: yes
+  roles:
+     - mrlesmithjr.apache2
+     - oefenweb.wordpress
+  vars:
+#Apache role
+     apache2_install_php: true
+#Wordpress role
+     wordpress_installs:
+      - name: wordpress
+        dbname: wordpress
+        dbuser: wordpress
+        dbpass: '${db_pass}'
+        dbhost: ${db_host}
+        path: /var/www/html
+        url: http://${wp_url}
+        title: wordpress
+        admin_name: admin
+        admin_email: root@localhost.localdomain
+        admin_password: 'tuFr8=aPra@a'
+        themes:
+          - name: twentytwelve
+            activate: true
+          - name: twentythirteen
+        plugins:
+          - name: contact-form-7
+            activate: false
+#          - name: simple-fields
+        users: {}
+        options: []
+        queries: []
