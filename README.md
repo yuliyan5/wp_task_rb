@@ -45,6 +45,7 @@ terraform destroy
 - playbooks and wp content are uploaded to s3 and then used by the instances which have access via an attached instance profile
 - DB user data sets a cronjob for wordpress DB Optimize
 - Pre-optimize table status is logged and uploaded to s3-bucket for convinient access
+- R53 alias record pointing to the new ALB, is being updated with each apply/destroy. Domain always poits to last deployy. 
 
 
 ### Check output from userdata 
