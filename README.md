@@ -27,7 +27,7 @@ idealista.mysql_role - https://github.com/idealista/mysql_role
 mrlesmithjr.apache2 - https://github.com/mrlesmithjr/ansible-apache2
 
 ### Apply code
-terraform validate && terraform apply -var-file vars/general.tfvars 
+terraform init && terraform apply -var-file vars/general.tfvars 
 
 ### Destroy Infrastructure
 terraform destroy
