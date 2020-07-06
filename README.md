@@ -27,10 +27,10 @@ idealista.mysql_role - https://github.com/idealista/mysql_role
 mrlesmithjr.apache2 - https://github.com/mrlesmithjr/ansible-apache2
 
 ### Apply code
-terraform init && terraform apply -var-file vars/general.tfvars 
+terraform init && terraform apply -var-file vars/general.tfvars -auto-approve  
 
 ### Destroy Infrastructure
-terraform destroy
+terraform destroy -var-file vars/general.tfvars -auto-approve  
 
 ### Components
 
